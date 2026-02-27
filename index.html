@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MealMate | Meal App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>🍽️ MealMate</h1>
+        <p>Plan meals, track nutrition, and generate a shopping list in seconds.</p>
+      </header>
+
+      <section class="card">
+        <h2>Add a Meal</h2>
+        <form id="meal-form">
+          <label>
+            Meal name
+            <input id="meal-name" type="text" placeholder="e.g. Grilled Salmon Bowl" required />
+          </label>
+
+          <label>
+            Category
+            <select id="meal-category" required>
+              <option value="">Select...</option>
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Snack</option>
+            </select>
+          </label>
+
+          <label>
+            Calories
+            <input id="meal-calories" type="number" min="0" placeholder="e.g. 520" required />
+          </label>
+
+          <label>
+            Ingredients (comma separated)
+            <input id="meal-ingredients" type="text" placeholder="rice, salmon, spinach" required />
+          </label>
+
+          <button type="submit">Add Meal</button>
+        </form>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <div class="card-title">
+            <h2>Weekly Meals</h2>
+            <button id="clear-meals" class="danger">Clear</button>
+          </div>
+
+          <label class="filter-label">
+            Filter by category
+            <select id="filter-category">
+              <option value="All">All</option>
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Snack</option>
+            </select>
+          </label>
+
+          <ul id="meal-list" class="meal-list"></ul>
+        </article>
+
+        <article class="card">
+          <h2>Summary</h2>
+          <p><strong>Total meals:</strong> <span id="total-meals">0</span></p>
+          <p><strong>Total calories:</strong> <span id="total-calories">0</span></p>
+          <p><strong>Avg calories/meal:</strong> <span id="avg-calories">0</span></p>
+
+          <h3>Shopping List</h3>
+          <ul id="shopping-list" class="shopping-list"></ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
